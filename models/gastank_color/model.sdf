@@ -1,0 +1,24 @@
+<?xml version="1.0" ?>
+<sdf version="1.4">
+  <model name="gastank_color">
+    <link name="link">
+      <visual name="visual">
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://gastank_color/meshes/gastank_color.dae</uri>
+            <scale>.1875 .1875 .1875</scale>
+          </mesh>
+        </geometry>
+        <!--material>
+          <script>
+            <uri>model://gastank_color/materials/scripts</uri>
+            <uri>model://gastank_color/materials/textures</uri>
+            <name>Gastank/Texture</name>
+          </script>
+        </material-->
+      </visual>
+    </link>
+    <static>1</static>
+  </model>
+</sdf>

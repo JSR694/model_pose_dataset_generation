@@ -1,0 +1,15 @@
+material Gastank/Texture
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture gastank.png
+        filtering anisotropic
+        max_anisotropy 16
+      }
+    }
+  }
+}

@@ -1,0 +1,29 @@
+<launch>
+    <!-- Launch gazebo world, and init camera plugin: -->
+    <include file="$(find model_pose_dataset_generation)/launch/dataset_gen_world.launch"/>
+
+    <!-- Spawn gazebo camera and initialize interfaces for it: -->
+    <node pkg="model_pose_dataset_generation" type="gazebo_cam_interface.py" 
+	  name="gazebo_cam_interface" output="screen">
+	<param name ="rgb_topic" value="/camera1/camera/rgb/image_raw"/>
+	<param name ="cam_info_topic" value="/camera1/camera/rgb/camera_info"/>
+	<param name ="camera_name" value="camera1"/>
+	<param name ="gazebo_namespace" value="/gazebo"/>
+         <!-- point, quaternion (xyz xyzw) -->
+	<rosparam param = "initial_pose">[ 0, 0, 0, 0, 0, 0, 1 ]</rosparam>
+    </node>
+    
+    <!-- Run datset gen scripts -->
+    <node pkg="model_pose_dataset_generation" type="model_views.py" name="dataset_generator" output="screen">
+        <param name ="dataset_name" value="wall_texture_gastank_texture_CLUTTER.h5"/>
+        <param name ="model_name" value="gastank_color"/>
+        <param name ="num_images" value="3"/>
+        <param name ="model_scale_factor" value=".1875"/>
+        <param name ="cam_distance" value="1.75"/>
+        <param name ="do_clutter" value="True"/>
+        <rosparam param ="clutter_exclude_region">
+                [[.138, .47], [.163, .453],[-.15, 0]]
+        </rosparam>
+    </node>
+
+</launch>

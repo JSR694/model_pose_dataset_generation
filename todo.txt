@@ -1,0 +1,43 @@
+====TODO:====
+--MAJOR PROBLEM: why don't the clutter objects appear in the camera capture imgs???
+    -they spawn fine and show up in rqt_img_view...
+    -Make sure that it's not somehow capturing earlier (pre-clutter) frames.
+        -- spawn an object which is there only when no clutter is present.
+  -- Updating to Gazebo 8 did not fix this problem.
+
+-"extract_images.py": set dataset filepath with cmd line args.
+
+-Clean up print statements.
+
+-ValueError on node shutdown-- trying to dset.close() on a closed dataset.
+
+-Try to reduce thread sleep time between adding clutter and taking image.
+-   How low can we go?
+
+-Clutter: instead of spawning+removing objects each time, spawn all of them
+-       at the start and then move them in/out of the camera view as needed.
+-       Could save a lot of time.
+
+-See TODO's in the code.
+
+==== Longer-term TODOs ====
+-Proper dir existence checking
+
+-Make background texture a parameter.
+
+====DONE:====
+Finish labling balls
+Find transform from world to gastank.  Put balls in gastank frame.
+-Test everything so far.  Debug.  See TODOs in code.
+-Write dataset code.
+-Test everything together.
+-Generate dataset.
+-Scale of gastank.  It's multiple meters.
+-Create textured gastank.
+-COMPRESS images.
+-       SEE: https://github.com/h5py/h5py/issues/745#issuecomment-259646466
+- Fix keypoint, regen datasets.
+- Cluttered scene.
+- Load keypoints from meshlab .pp file.
+-Make proper node for model_views.py, with parameters for texture options, 
+        dest dirs, etc.
