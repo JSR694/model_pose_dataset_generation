@@ -21,8 +21,10 @@
         <param name ="model_scale_factor" value=".1875"/>
         <param name ="cam_distance" value="1.75"/>
         <param name ="do_clutter" value="True"/>
-        <rosparam param ="clutter_exclude_region">
-                [[.138, .47], [.163, .453],[-.15, 0]]
+        <!--# Bounding rectangle, in the object's frame, within which clutter is not allowed.
+		      (max,min) for x,y,z. -->
+		 <rosparam param ="clutter_exclude_region">
+			[[.138, .47], [.163, .453],[-.15, 0]]
         </rosparam>
     </node>
 
