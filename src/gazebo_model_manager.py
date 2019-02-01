@@ -5,6 +5,7 @@
 # Simple interface for spawning and interacting with models in gazebo.
 # Also includes functionality for spawning and reading from a simulated camera sensor.
 #
+# Based on https://github.com/GraspDeepLearning/generate_gazebo_output
 #######################################################
 
 import rospy
@@ -26,7 +27,7 @@ import tf_conversions
 import math
 import std_srvs.srv
 
-#TODO DEbug only remove later
+#TODO Debug only, remove later
 import rospy 
 from sensor_msgs import point_cloud2
 from sensor_msgs.msg import PointCloud2

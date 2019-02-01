@@ -1,3 +1,5 @@
+# Source: 
+# https://github.com/GraspDeepLearning/generate_gazebo_output/blob/master/src/transformer_manager.py
 
 import tf
 import rospy

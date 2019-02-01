@@ -9,7 +9,7 @@
 # See README for more info, including dataset schema, etc.
 #
 # Author: Jack Rasiel
-# Contact: j{last name} {at} haverford {dot} edu
+# Contact: j{last name} {at} cs {dot} umd {dot} edu
 #
 ################################################################################
 
